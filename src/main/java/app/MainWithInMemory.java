@@ -1,8 +1,12 @@
 package app;
 
-import data_access.DBUserDataAccessObject;
+import java.awt.CardLayout;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.WindowConstants;
+
 import data_access.InMemoryUserDataAccessObject;
-import entity.CommonUserFactory;
 import interface_adapter.ViewManagerModel;
 import interface_adapter.logged_in.LoggedInViewModel;
 import interface_adapter.login.LoginViewModel;
@@ -11,9 +15,6 @@ import view.LoggedInView;
 import view.LoginView;
 import view.SignupView;
 import view.ViewManager;
-
-import javax.swing.*;
-import java.awt.*;
 
 /**
  * The version of Main with an external database used to persist user data.
@@ -29,7 +30,8 @@ public class MainWithInMemory {
         // various cards, and the layout, and stitch them together.
 
         // The main application window.
-        final JFrame application = new JFrame("Login Example");
+        final JFrame application;
+        application = new JFrame("Login Example");
         application.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
         final CardLayout cardLayout = new CardLayout();
